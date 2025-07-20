@@ -1,0 +1,629 @@
+/* Reset CSS base per normalizzazione cross-browser */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Stili base body per tipografia e colori */
+body {
+    font-family: 'Inter', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f8f9fa;
+}
+
+/* Container principale per centrare contenuto */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* === HEADER E NAVIGAZIONE === */
+
+/* Header fisso con backdrop blur per modernità */
+.header {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid #e9ecef;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+/* Layout flexbox per elementi header */
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 0;
+}
+
+/* Sezione logo con layout flexbox */
+.logo-section {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+/* Icona logo Technogym stilizzata */
+.logo-icon {
+    width: 50px;
+    height: 50px;
+    /* Rimosso background e border-radius per fare spazio all'SVG */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* Rimosso box-shadow, l'SVG gestirà il suo aspetto */
+}
+
+/* Stili per l'immagine SVG del logo */
+.logo-svg {
+    width: 100%; /* Occupa tutto lo spazio del contenitore .logo-icon */
+    height: 100%; /* Occupa tutto lo spazio del contenitore .logo-icon */
+    object-fit: contain; /* Assicura che l'SVG sia contenuto senza distorsioni */
+}
+
+/* Testo logo grande e in grassetto - non più usato con l'SVG */
+/* .logo-text {
+    color: white;
+    font-size: 24px;
+    font-weight: 700;
+} */
+
+/* Informazioni brand verticalmente allineate */
+.brand-info {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Titolo brand Technogym */
+.brand-title {
+    font-size: 24px;
+    font-weight: 700;
+    color: #455560; /* Colore Grigio/Gunmetal */
+    margin: 0;
+}
+
+/* Sottotitolo che identifica settore fitness */
+.brand-subtitle {
+    font-size: 14px;
+    color: #6c757d;
+    margin: 0;
+}
+
+/* Navigazione desktop nascosta su mobile */
+.main-nav {
+    display: none;
+}
+
+/* Lista navigazione senza stili di default */
+.nav-list {
+    display: flex;
+    list-style: none;
+    gap: 32px;
+    align-items: center;
+}
+
+/* Link navigazione con hover effect */
+.nav-link {
+    text-decoration: none;
+    color: #495057;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+    color: #FFF797; /* Colore Giallo Chiaro */
+}
+
+/* Pulsante menu mobile con animazione hamburger */
+.mobile-menu-btn {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+}
+
+/* Linee hamburger menu */
+.mobile-menu-btn span {
+    width: 25px;
+    height: 3px;
+    background-color: #495057;
+    transition: all 0.3s ease;
+}
+
+/* Menu mobile nascosto di default */
+.mobile-nav {
+    display: none;
+    padding: 20px 0;
+    border-top: 1px solid #e9ecef;
+}
+
+/* Menu mobile attivo */
+.mobile-nav.active {
+    display: block;
+}
+
+/* Lista menu mobile */
+.mobile-nav-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+/* Link menu mobile */
+.mobile-nav-list a {
+    text-decoration: none;
+    color: #495057;
+    font-weight: 500;
+    padding: 8px 0;
+    transition: color 0.3s ease;
+}
+
+.mobile-nav-list a:hover {
+    color: #FFF797; /* Colore Giallo Chiaro */
+}
+
+/* === SEZIONE HERO === */
+
+/* Sezione hero con gradiente Technogym */
+.hero-section {
+    background: linear-gradient(135deg, #455560 0%, #6c757d 100%); /* Gradiente con colori Grigio/Gunmetal */
+    color: white;
+    padding: 80px 0;
+}
+
+/* Grid responsive per contenuto hero */
+.hero-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 40px;
+    align-items: center;
+}
+
+/* Contenuto testuale hero */
+.hero-content {
+    text-align: center;
+}
+
+/* Titolo hero principale */
+.hero-title {
+    font-size: 48px;
+    font-weight: 700;
+    margin-bottom: 16px;
+    line-height: 1.2;
+}
+
+/* Sottotitolo hero */
+.hero-subtitle {
+    display: block;
+    font-size: 24px;
+    font-weight: 400;
+    opacity: 0.9;
+    margin-top: 8px;
+}
+
+/* Descrizione hero */
+.hero-description {
+    font-size: 18px;
+    opacity: 0.9;
+    margin-bottom: 32px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Container azioni hero */
+.hero-actions {
+    margin-top: 32px;
+}
+
+/* Pulsante primario */
+.btn-primary {
+    background: #FFF797; /* Colore Giallo Chiaro */
+    color: #455560; /* Colore Grigio/Gunmetal */
+    border: none;
+    padding: 16px 32px;
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Container immagine hero */
+.hero-image-container {
+    position: relative;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+/* Immagine hero responsive */
+.hero-image {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 16px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+/* === SEZIONE STATISTICHE === */
+
+/* Sezione statistiche con background neutro */
+.stats-section {
+    padding: 60px 0;
+    background: white;
+}
+
+/* Grid statistiche responsive */
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 30px;
+}
+
+/* Card singola statistica */
+.stat-card {
+    text-align: center;
+    padding: 30px 20px;
+    background: #f8f9fa;
+    border-radius: 12px;
+    transition: transform 0.3s ease;
+}
+
+.stat-card:hover {
+    transform: translateY(-5px);
+}
+
+/* Icona statistica */
+.stat-icon {
+    font-size: 32px;
+    margin-bottom: 16px;
+}
+
+/* Numero statistica grande */
+.stat-number {
+    color: #455560; /* Colore Grigio/Gunmetal */
+    font-size: 36px;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+/* Label statistica */
+.stat-label {
+    font-size: 16px;
+    color: #6c757d;
+    font-weight: 500;
+}
+
+/* === SEZIONE AZIENDA === */
+
+/* Sezione company con padding verticale */
+.company-section {
+    padding: 80px 0;
+    background: #f8f9fa;
+}
+
+/* Card principale azienda */
+.company-card {
+    background: white;
+    border-radius: 16px;
+    padding: 60px 40px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* Header card centrato */
+.card-header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+/* Titolo card principale */
+.card-title {
+    font-size: 32px;
+    font-weight: 700;
+    color: #2c3e50;
+    margin-bottom: 16px;
+}
+
+/* Descrizione card */
+.card-description {
+    font-size: 18px;
+    color: #6c757d;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Grid contenuto responsive */
+.content-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 40px;
+    margin-bottom: 40px;
+}
+
+/* Sezione contenuto singola */
+.content-section h3 {
+    font-size: 20px;
+    font-weight: 600;
+    color: #2c3e50;
+    margin-bottom: 16px;
+}
+
+.content-section p {
+    color: #6c757d;
+    line-height: 1.7;
+}
+
+/* Sezione settori */
+.sectors-section {
+    padding-top: 40px;
+    border-top: 1px solid #e9ecef;
+}
+
+.sectors-title {
+    font-size: 24px;
+    font-weight: 600;
+    color: #2c3e50;
+    margin-bottom: 24px;
+    text-align: center;
+}
+
+/* Grid settori */
+.sectors-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+/* Card settore */
+.sector-card {
+    background: #f8f9fa;
+    padding: 24px;
+    border-radius: 12px;
+    text-align: center;
+}
+
+.sector-name {
+    font-size: 16px;
+    font-weight: 600;
+    color: #2c3e50;
+}
+
+/* === SEZIONE REPORT === */
+
+/* Sezione report con gradiente subtile */
+.reports-section {
+    padding: 80px 0;
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+}
+
+/* Header sezione centrato */
+.section-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+/* Titolo sezione principale */
+.section-title-main {
+    font-size: 36px;
+    font-weight: 700;
+    color: #2c3e50;
+    margin-bottom: 16px;
+}
+
+/* Descrizione sezione */
+.section-description {
+    font-size: 18px;
+    color: #6c757d;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+/* Grid report responsive */
+.reports-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+    margin-bottom: 40px;
+}
+
+/* Card report individuale */
+.report-card {
+    background: white;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.report-card:hover {
+    transform: translateY(-10px);
+}
+
+/* Header report */
+.report-header {
+    padding: 24px 24px 0;
+}
+
+/* Badge report */
+.report-badge {
+    background: #455560; /* Colore Grigio/Gunmetal */
+    color: #FFF797; /* Colore Giallo Chiaro */
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    display: inline-block;
+}
+
+/* Contenuto report */
+.report-content {
+    padding: 24px;
+}
+
+/* Titolo report */
+.report-title {
+    font-size: 20px;
+    font-weight: 600;
+    color: #2c3e50;
+    margin-bottom: 12px;
+}
+
+/* Descrizione report */
+.report-description {
+    color: #6c757d;
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+/* Lista highlights */
+.report-highlights {
+    list-style: none;
+    margin-bottom: 20px;
+}
+
+.report-highlights li {
+    padding: 4px 0;
+    color: #495057;
+    position: relative;
+    padding-left: 20px;
+}
+
+.report-highlights li:before {
+    content: "•";
+    color: #455560; /* Colore Grigio/Gunmetal */
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+}
+
+/* Metadati report */
+.report-meta {
+    font-size: 14px;
+    color: #6c757d;
+    font-weight: 500;
+}
+
+/* Footer report */
+.report-footer {
+    padding: 0 24px 24px;
+}
+
+/* Pulsante download */
+.download-btn {
+    background: #455560; /* Colore Grigio/Gunmetal */
+    color: #FFF797; /* Colore Giallo Chiaro */
+    text-decoration: none;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-weight: 600;
+    display: inline-block;
+    transition: all 0.3s ease;
+    width: 100%;
+    text-align: center;
+}
+
+.download-btn:hover {
+    background: #2c3e50; /* Tonalità più scura del Grigio/Gunmetal */
+    transform: translateY(-2px);
+}
+
+/* Nota legale */
+.legal-note {
+    text-align: center;
+    color: #6c757d;
+    font-size: 14px;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* === FOOTER === */
+
+/* Footer semplice */
+.footer {
+    background: #455560; /* Colore Grigio/Gunmetal */
+    color: white;
+    padding: 40px 0;
+    text-align: center;
+}
+
+.footer-content p {
+    margin-bottom: 8px;
+    opacity: 0.9;
+}
+
+/* === MEDIA QUERIES RESPONSIVE === */
+
+/* Tablet e desktop - oltre 768px */
+@media (min-width: 768px) {
+    
+    /* Navigazione desktop visibile */
+    .main-nav {
+        display: block;
+    }
+    
+    /* Menu mobile nascosto */
+    .mobile-menu-btn {
+        display: none;
+    }
+    
+    /* Hero grid a 2 colonne */
+    .hero-grid {
+        grid-template-columns: 1fr 1fr;
+        text-align: left;
+    }
+    
+    /* Titolo hero più grande */
+    .hero-title {
+        font-size: 56px;
+    }
+    
+    /* Immagine hero più alta */
+    .hero-image {
+        height: 400px;
+    }
+    
+    /* Content grid a 2 colonne */
+    .content-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+    
+    /* Card azienda con padding maggiore */
+    .company-card {
+        padding: 80px 60px;
+    }
+}
+
+/* Desktop grande - oltre 1024px */
+@media (min-width: 1024px) {
+    
+    /* Container più largo */
+    .container {
+        padding: 0 40px;
+    }
+    
+    /* Sezioni con padding maggiore */
+    .hero-section,
+    .company-section,
+    .reports-section {
+        padding: 100px 0;
+    }
+    
+    /* Stats section padding */
+    .stats-section {
+        padding: 80px 0;
+    }
+}
